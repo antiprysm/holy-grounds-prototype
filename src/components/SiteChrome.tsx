@@ -1,0 +1,88 @@
+import Image from "next/image";
+import Link from "next/link";
+import { publicAsset, siteContent } from "@/data/siteContent";
+
+export function ArrowIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+      <path d="M5 12h14M14 7l5 5-5 5" />
+    </svg>
+  );
+}
+
+export function InstagramIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+export function DraftPill({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <p className="draft-pill">{children}</p>;
+}
+
+export function SiteHeader() {
+  return (
+    <>
+      <a className="skip-link" href="#main-content">
+        {siteContent.utilityLabels.skipLink}
+      </a>
+      <header className="site-header">
+        <div className="preview-bar">
+          <span className="preview-dot" aria-hidden="true" />
+          {siteContent.brand.conceptLabel}
+        </div>
+        <div className="nav-shell">
+          <Link className="wordmark" href="/" aria-label={`${siteContent.brand.name}, home`}>
+            <Image
+              src={publicAsset(siteContent.brand.logoBlack)}
+              alt=""
+              width={52}
+              height={50}
+              priority
+            />
+            <span>{siteContent.brand.shortName}</span>
+          </Link>
+          <nav className="primary-nav" aria-label="Primary navigation">
+            {siteContent.navigation.map((item) => (
+              <Link key={item.href} href={item.href}>
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <Link className="nav-cta" href="/#book">
+            {siteContent.utilityLabels.navigationCta}
+          </Link>
+        </div>
+      </header>
+    </>
+  );
+}
+
+export function SiteFooter() {
+  return (
+    <footer className="site-footer">
+      <div className="page-container footer-grid">
+        <div className="footer-brand">
+          <Image
+            src={publicAsset(siteContent.brand.logoBlack)}
+            alt=""
+            width={48}
+            height={46}
+          />
+          <span>{siteContent.footer.title}</span>
+        </div>
+        <div>
+          <strong>{siteContent.footer.statement}</strong>
+          <p>{siteContent.footer.note}</p>
+        </div>
+        <a href="#top">
+          {siteContent.utilityLabels.backToTop} <span aria-hidden="true">↑</span>
+        </a>
+      </div>
+    </footer>
+  );
+}
