@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowIcon } from "@/components/SiteChrome";
 import { publicAsset, siteContent } from "@/data/siteContent";
 
 export const metadata: Metadata = {
@@ -35,16 +37,56 @@ export default function BusinessInformationPage() {
         <div className="page-container business-details-grid">
           {content.details.map((detail) => (
             <article
-              className={`business-detail${"placeholder" in detail && detail.placeholder ? " business-placeholder" : ""}`}
+              className={`business-detail${"href" in detail ? " business-linked-detail" : ""}`}
               key={detail.label}
             >
               <p>{detail.label}</p>
-              <h2>{detail.value}</h2>
+              <h2>
+                {"href" in detail ? (
+                  detail.href.startsWith("/") ? (
+                    <Link href={detail.href}>{detail.value}</Link>
+                  ) : (
+                    <a href={detail.href}>{detail.value}</a>
+                  )
+                ) : (
+                  detail.value
+                )}
+              </h2>
               <span>{detail.note}</span>
             </article>
           ))}
         </div>
-        <p className="page-container business-disclaimer">{content.disclaimer}</p>
+      </section>
+
+      <section className="business-operations-section">
+        <div className="page-container business-operations-panel">
+          <div className="business-operations-heading">
+            <p className="eyebrow eyebrow-light">{content.operations.eyebrow}</p>
+            <h2>{content.operations.title}</h2>
+            <p>{content.operations.intro}</p>
+          </div>
+
+          <div className="business-request-grid">
+            {content.operations.items.map((item) => (
+              <article className="business-request-card" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+                <a
+                  className="business-request-link"
+                  href={item.action.href}
+                  {...(item.action.href.startsWith("http")
+                    ? { target: "_blank", rel: "noreferrer noopener" }
+                    : {})}
+                >
+                  {item.action.label}
+                  <ArrowIcon />
+                </a>
+              </article>
+            ))}
+          </div>
+
+          <p className="business-disclaimer">{content.disclaimer}</p>
+        </div>
       </section>
     </main>
   );

@@ -1,10 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowIcon,
-  DraftPill,
-  InstagramIcon,
-} from "@/components/SiteChrome";
+import { ArrowIcon, InstagramIcon } from "@/components/SiteChrome";
 import { publicAsset, siteContent } from "@/data/siteContent";
 
 export default function Home() {
@@ -99,7 +95,6 @@ export default function Home() {
           <div className="story-preview-copy">
             <p className="eyebrow">{content.storyPreview.eyebrow}</p>
             <h2>{content.storyPreview.title}</h2>
-            <DraftPill>{content.storyPreview.status}</DraftPill>
             <p>{content.storyPreview.description}</p>
             <Link className="button button-outline" href={content.storyPreview.action.href}>
               {content.storyPreview.action.label}

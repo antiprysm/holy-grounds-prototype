@@ -66,22 +66,49 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="page-container footer-grid">
-        <div className="footer-brand">
-          <Image
-            src={publicAsset(siteContent.brand.logoBlack)}
-            alt=""
-            width={48}
-            height={46}
-          />
-          <span>{siteContent.footer.title}</span>
+        <div className="footer-brand-block">
+          <div className="footer-brand">
+            <Image
+              src={publicAsset(siteContent.brand.logoBlack)}
+              alt=""
+              width={48}
+              height={46}
+            />
+            <span>{siteContent.footer.title}</span>
+          </div>
+          <p className="footer-motto">{siteContent.footer.motto}</p>
         </div>
-        <div>
-          <strong>{siteContent.footer.statement}</strong>
-          <p>{siteContent.footer.note}</p>
+
+        <div className="footer-contact">
+          <span>{siteContent.footer.contactLabel}</span>
+          <a href={`mailto:${siteContent.footer.email}`}>{siteContent.footer.email}</a>
         </div>
-        <a href="#top">
-          {siteContent.utilityLabels.backToTop} <span aria-hidden="true">↑</span>
-        </a>
+
+        <nav className="footer-navigation" aria-label="Footer navigation">
+          {siteContent.footer.links.map((item) => (
+            item.href.startsWith("http") ? (
+              <a key={item.href} href={item.href} target="_blank" rel="noreferrer noopener">
+                {item.label}
+              </a>
+            ) : (
+              <Link key={item.href} href={item.href}>
+                {item.label}
+              </Link>
+            )
+          ))}
+        </nav>
+
+        <div className="footer-bottom">
+          <p>
+            {siteContent.footer.copyright} <span aria-hidden="true">·</span>{" "}
+            <Link href={siteContent.footer.businessInformation.href}>
+              {siteContent.footer.businessInformation.label}
+            </Link>
+          </p>
+          <a className="footer-back-to-top" href="#top">
+            {siteContent.utilityLabels.backToTop} <span aria-hidden="true">↑</span>
+          </a>
+        </div>
       </div>
     </footer>
   );

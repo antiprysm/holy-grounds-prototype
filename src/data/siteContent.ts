@@ -14,8 +14,8 @@ export const siteContent = {
     shortName: "Holy Grounds",
     name: "Holy Grounds Coffee Truck",
     conceptLabel: "Private meeting preview · not published",
-    logoBlack: "/brand/holy-grounds-logo-black.webp",
-    logoBrown: "/brand/holy-grounds-logo-brown.webp",
+    logoBlack: "/brand/holy-grounds-logo-black-transparent.webp",
+    logoBrown: "/brand/holy-grounds-logo-brown-transparent.webp",
     phraseArtwork: "/brand/where-miracles-are-brewing.svg",
   },
   navigation: [
@@ -59,12 +59,11 @@ export const siteContent = {
       ],
     },
     storyPreview: {
-      eyebrow: "Our beginning",
-      title: "A hopeful idea, carried forward",
-      status: "Draft copy · Krista’s approval required",
+      eyebrow: "Our Beginning",
+      title: "Olivia’s vision, carried forward",
       description:
-        "Holy Grounds began with Olivia’s hope of creating a coffee gathering place rooted in faith and genuine care for people. The full draft story is ready for the family to shape in their own words.",
-      action: { label: "Read the draft story", href: "/our-story/" },
+        "Olivia founded Holy Grounds Coffee Truck with a faith-inspired mission: to honor God through craft coffee and genuine hospitality. She envisioned a gathering place where people felt seen, known, and welcomed. Today, we carry her vision forward, sharing faith, hope, and connection, one cup at a time.",
+      action: { label: "Read Our Story", href: "/our-story" },
       image: "/images/olivia-coffee-truck-portrait.webp",
       imageAlt: "Olivia smiling from the Holy Grounds Coffee Truck service window",
     },
@@ -159,40 +158,74 @@ export const siteContent = {
   story: {
     metaTitle: "Our Story | Holy Grounds Coffee Truck",
     eyebrow: "Our story",
-    title: "Hope is brewing",
-    status: "Draft narrative · every reference to Olivia requires Krista’s approval",
+    title: "Rooted in faith. Gathered over coffee.",
     introduction:
-      "This page is a private discussion draft based on the family’s marketing-plan language. It is not approved public copy.",
+      "Olivia founded Holy Grounds Coffee Truck with a faith-inspired mission: to honor God through craft coffee and genuine hospitality. She envisioned a gathering place where people felt seen, known, and welcomed. From ethically sourced beans to house-made syrups and carefully poured latte art, every detail reflected her care for others. Today, we carry her vision forward through community and connection, one cup at a time.",
     chapters: [
       {
         title: "A calling over coffee",
+        date: "April 20, 2024",
         paragraphs: [
-          "Before Holy Grounds had a truck, Olivia carried an idea for a coffee shop where faith, encouragement, and community could meet. The vision was never only about what was in the cup; it was about how people might feel when they gathered around it.",
-          "Practical life came first, but the idea stayed with her—waiting for the right season and the support to take shape.",
+          "Our Queen Bean and founder, Olivia Budzisz, journaled about a dream God had placed on her heart: a faith-based coffee shop and bookstore. She envisioned a space where people could gather, find peace, and build community, trusting God to bring that dream to life.",
         ],
       },
       {
-        title: "A season that changed everything",
+        title: "Faith through an unexpected season",
+        date: null,
         paragraphs: [
-          "An unexpected health crisis interrupted Olivia’s early career and began a demanding season of treatment, rehabilitation, and recovery. Her family describes that chapter through courage, faith, and the care of a far-reaching community.",
-          "Health details, dates, and language in this section must be reviewed by Krista and Olivia before any public use.",
+          "Four months later, shortly after graduating from Hope College and celebrating her 22nd birthday, Olivia was diagnosed with Diffuse Midline Glioma, a rare and aggressive brain tumor. Through treatment and clinical trials, she continued pursuing her calling to make God’s name known.",
         ],
       },
       {
-        title: "The truck takes shape",
+        title: "The dream takes shape",
+        date: null,
         paragraphs: [
-          "The coffee dream endured. With her family beside her, a truck was purchased and transformed into the mobile gathering place now known as Holy Grounds Coffee Truck.",
-          "The draft mission is simple: serve more than coffee by creating moments of welcome, encouragement, and genuine connection—one cup at a time.",
+          "Alongside her dad, Brian, Olivia brought that vision to life through Holy Grounds Coffee Truck. Craft coffee and genuine hospitality became a way to share her faith, encourage others, and help people feel seen, welcomed, and connected.",
+        ],
+      },
+      {
+        title: "Her calling continues",
+        date: null,
+        paragraphs: [
+          "Though Olivia is no longer physically with us, her family and community continue the work she began. Her dream lives on through every cup, every conversation, and every connection, sharing the faith, hope, love, and kindness she poured into",
         ],
       },
     ],
+    leadershipCohort: {
+      id: "leadership-cohort",
+      title: "Growing the next generation of leaders",
+      paragraphs: [
+        "Olivia’s vision for community extended beyond the coffee truck. She created the Holy Grounds Women’s Global Leadership Cohort to encourage young women to grow as leaders through thoughtful conversations and meaningful connections.",
+        "Krista and Andrea are continuing that vision with monthly online gatherings featuring leadership talks and discussion. Come ready to listen, share, and connect. No preparation required.",
+      ],
+      schedule: [
+        { label: "First gathering", value: "Thursday, October 1, 2026" },
+        { label: "Time", value: "7:00–8:30 PM Central" },
+        {
+          label: "Ongoing",
+          value: "First Thursday of each month, online through Google Meet",
+        },
+        { label: "October topic", value: "Technology in modern life" },
+      ],
+      invitation: {
+        prompt: "Interested, even if you’re unsure you can attend? Email",
+        email: "holygroundscoffeetruck@gmail.com",
+        suffix: "to receive a meeting invitation.",
+      },
+      action: {
+        label: "Request a meeting invitation",
+        href: "mailto:holygroundscoffeetruck@gmail.com?subject=Leadership%20Cohort%20Meeting%20Invitation",
+      },
+      followUp: "Krista or Andrea will email you the Google Meet invitation.",
+    },
     primaryImage: "/images/olivia-coffee-truck-portrait.webp",
     primaryImageAlt: "Olivia smiling from the Holy Grounds Coffee Truck service window",
     secondaryImage: "/images/olivia-truck-behind-scenes.webp",
     secondaryImageAlt: "Olivia seated in the truck during an earlier stage of the project",
-    pullQuote: "The final story should sound like the family—honest, hopeful, and full of heart.",
-    approvalNote:
-      "Editorial note: Krista and Olivia should approve the story’s voice, health references, timeline, and mission language before publication.",
+    secondaryImageCaption: "Behind the scenes.",
+    pullQuote:
+      "I’ve learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.",
+    quoteAttribution: "Commonly attributed to Maya Angelou",
   },
   menu: {
     metaTitle: "Fall Menu | Holy Grounds Coffee Truck",
@@ -241,9 +274,15 @@ export const siteContent = {
           { name: "Pumpkin Cold Foam Cold Brew", price: "$6.50" },
           { name: "Pumpkin Spiced Chai Latte", price: "$6.50" },
           {
-            name: "House-Made Syrups",
+            name: "House-made Syrups",
             price: "",
             note: "Vanilla, caramel, mocha, and pumpkin",
+          },
+          {
+            name: "Milk Options",
+            price: "",
+            options: "Whole · Oat · Almond",
+            note: "Your choice of milk at no extra charge.",
           },
         ],
       },
@@ -265,45 +304,86 @@ export const siteContent = {
         ],
       },
     ],
-    syrupsNote: "House-made syrup options are listed for this fall preview.",
-    // TODO(Krista): Confirm this donation statement and any beneficiary details before publication.
-    donationStatement: "Proceeds from all sales will be donated.",
-    donationStatus: "Draft statement · Krista’s confirmation required",
+    customization: {
+      title: "Make it yours",
+      description:
+        "Have a favorite combination? Ask your barista! We’re happy to customize your drink with our available ingredients. Listed specials include their featured flavors. Additional sauces are $1.",
+    },
+    // INTERNAL CONTENT NOTE: The donation recipient and donation basis—revenue, profit, or a portion of sales—remain pending.
   },
   business: {
     metaTitle: "Business Information | Holy Grounds Coffee Truck",
-    eyebrow: "Business information",
-    title: "The practical details",
+    eyebrow: "Holy Grounds Coffee Truck",
+    title: "Business information",
     intro:
-      "This meeting-preview page reserves a clear place for verified business information without inventing license numbers, addresses, service hours, or formal commitments.",
+      "Practical details for contacting Holy Grounds Coffee Truck, understanding how the mobile business operates, and requesting documentation.",
     image: "/images/coffee-truck-interior.webp",
     imageAlt: "The working interior of the Holy Grounds Coffee Truck",
     details: [
       {
         label: "Working business name",
         value: "Holy Grounds Coffee Co., LLC",
-        note: "Confirm legal styling and punctuation before publication.",
+        note: "Public-facing name: Holy Grounds Coffee Truck. Legal styling remains subject to confirmation.",
       },
       {
-        label: "Business format",
+        label: "Service model",
         value: "Mobile coffee truck",
-        note: "Event locations and operating schedules vary.",
+        note: "Event locations, dates, and operating schedules vary.",
       },
       {
         label: "Business license",
-        value: "License information placeholder",
-        note: "License number, issuing jurisdiction, and status have not been supplied for this preview.",
-        placeholder: true,
+        value: "Provided upon request",
+        note: "We can provide the business license upon request.",
       },
       {
         label: "Public contact details",
-        value: "To be confirmed",
-        note: "No address, phone number, or business email is represented in this prototype.",
-        placeholder: true,
+        value: "holygroundscoffeetruck@gmail.com",
+        note: "Bookings, event questions, and Leadership Cohort invitations.",
+        href: "mailto:holygroundscoffeetruck@gmail.com",
+      },
+      {
+        label: "Public social channel",
+        value: "@holygrounds.coffeetruck",
+        note: "Verified Holy Grounds Coffee Truck Instagram account.",
+        href: "https://www.instagram.com/holygrounds.coffeetruck/",
       },
     ],
+    operations: {
+      eyebrow: "How to connect",
+      title: "Clear paths for practical questions",
+      intro:
+        "Holy Grounds operates as a mobile coffee truck rather than a fixed-location café. Use the confirmed public channels below to find updates, discuss a gathering, or request business documentation.",
+      items: [
+        {
+          title: "Find the truck",
+          description:
+            "Event locations and service times vary. Use the verified Instagram account for public truck updates.",
+          action: {
+            label: "View Instagram",
+            href: "https://www.instagram.com/holygrounds.coffeetruck/",
+          },
+        },
+        {
+          title: "Plan a gathering",
+          description:
+            "When emailing, include your name or organization, desired date, event location, and a few details about the gathering.",
+          action: {
+            label: "Email about an event",
+            href: "mailto:holygroundscoffeetruck@gmail.com?subject=Event%20Inquiry",
+          },
+        },
+        {
+          title: "Request documentation",
+          description: "We can provide the business license upon request.",
+          action: {
+            label: "Request the license",
+            href: "mailto:holygroundscoffeetruck@gmail.com?subject=Business%20License%20Request",
+          },
+        },
+      ],
+    },
     disclaimer:
-      "Nothing on this page should be treated as verified licensing, permitting, insurance, or operating information.",
+      "No public street address, fixed daily hours, or phone number has been confirmed for this preview.",
   },
   social: {
     label: "Follow the journey on Instagram",
@@ -312,7 +392,24 @@ export const siteContent = {
   },
   footer: {
     title: "Holy Grounds Coffee Truck",
-    statement: "Private concept preview for discussion only.",
-    note: "Not the official published website. Copy, prices, events, and business details remain subject to review and approval.",
+    motto: "Where Miracles Are Brewing",
+    contactLabel: "Bookings & cohort invitations.",
+    email: "holygroundscoffeetruck@gmail.com",
+    links: [
+      { label: "Our Story", href: "/our-story" },
+      { label: "Menu", href: "/menu" },
+      { label: "Find the Truck", href: "/#visit" },
+      { label: "Event Inquiry", href: "/#book" },
+      { label: "Leadership Cohort", href: "/our-story#leadership-cohort" },
+      {
+        label: "Instagram",
+        href: "https://www.instagram.com/holygrounds.coffeetruck/",
+      },
+    ],
+    copyright: "© 2026 Holy Grounds Coffee Truck",
+    businessInformation: {
+      label: "Business Information",
+      href: "/business-information",
+    },
   },
 } as const;

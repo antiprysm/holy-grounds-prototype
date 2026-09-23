@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { DraftPill } from "@/components/SiteChrome";
 import { publicAsset, siteContent } from "@/data/siteContent";
 
 export const metadata: Metadata = {
@@ -51,6 +50,9 @@ export default function MenuPage() {
                       <span aria-hidden="true" />
                       {item.price && <b>{item.price}</b>}
                     </div>
+                    {"options" in item && item.options && (
+                      <p className="menu-item-options">{item.options}</p>
+                    )}
                     {"note" in item && item.note && <p>{item.note}</p>}
                   </li>
                 ))}
@@ -59,10 +61,10 @@ export default function MenuPage() {
           ))}
         </div>
 
-        <div className="page-container donation-preview">
-          <DraftPill>{content.donationStatus}</DraftPill>
-          <p>{content.donationStatement}</p>
-        </div>
+        <section className="page-container menu-customization">
+          <h2>{content.customization.title}</h2>
+          <p>{content.customization.description}</p>
+        </section>
       </section>
     </main>
   );
