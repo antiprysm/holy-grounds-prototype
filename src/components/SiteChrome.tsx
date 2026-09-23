@@ -38,13 +38,12 @@ export function SiteHeader() {
         <div className="nav-shell">
           <Link className="wordmark" href="/" aria-label={`${siteContent.brand.name}, home`}>
             <Image
-              src={publicAsset(siteContent.brand.logoBlack)}
+              src={publicAsset(siteContent.brand.headerLockup)}
               alt=""
-              width={52}
-              height={50}
+              width={1211}
+              height={557}
               priority
             />
-            <span>{siteContent.brand.shortName}</span>
           </Link>
           <nav className="primary-nav" aria-label="Primary navigation">
             {siteContent.navigation.map((item) => (
@@ -53,7 +52,7 @@ export function SiteHeader() {
               </Link>
             ))}
           </nav>
-          <Link className="nav-cta" href="/#book">
+          <Link className="nav-cta" href={siteContent.utilityLabels.navigationCtaHref}>
             {siteContent.utilityLabels.navigationCta}
           </Link>
         </div>
@@ -67,16 +66,13 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="page-container footer-grid">
         <div className="footer-brand-block">
-          <div className="footer-brand">
-            <Image
-              src={publicAsset(siteContent.brand.logoBlack)}
-              alt=""
-              width={48}
-              height={46}
-            />
-            <span>{siteContent.footer.title}</span>
-          </div>
-          <p className="footer-motto">{siteContent.footer.motto}</p>
+          <Image
+            className="footer-lockup"
+            src={publicAsset(siteContent.brand.footerLockup)}
+            alt={siteContent.footer.title}
+            width={1211}
+            height={557}
+          />
         </div>
 
         <div className="footer-contact">

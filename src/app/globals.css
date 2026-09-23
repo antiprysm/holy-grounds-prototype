@@ -175,20 +175,14 @@ h3 {
   gap: 0.75rem;
 }
 
-.wordmark,
-.footer-brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  font-family: var(--font-serif);
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+.wordmark {
+  display: block;
+  width: clamp(7.5rem, 30vw, 9.5rem);
+  line-height: 0;
 }
 
-.wordmark img,
-.footer-brand img {
-  width: 2.1rem;
+.wordmark img {
+  width: 100%;
   height: auto;
 }
 
@@ -337,16 +331,6 @@ h3 {
   margin-bottom: 1.35rem;
   border-left: 3px solid var(--gold);
   padding-left: 1rem;
-}
-
-.tagline-wrap span {
-  display: block;
-  margin-bottom: 0.2rem;
-  color: var(--caramel-dark);
-  font-size: 0.62rem;
-  font-weight: 800;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
 }
 
 .tagline-wrap p {
@@ -531,6 +515,39 @@ h3 {
   color: rgba(246, 240, 230, 0.75);
 }
 
+.announcement-actions {
+  display: grid;
+  justify-items: start;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.announcement-directions {
+  background: var(--cream);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  color: var(--espresso);
+}
+
+.announcement-directions:hover {
+  transform: translateY(-2px);
+  background: var(--gold);
+}
+
+.visitor-note {
+  max-width: 33rem;
+  margin-bottom: 0;
+  color: rgba(246, 240, 230, 0.68);
+  font-size: 0.78rem;
+}
+
+.visitor-note a {
+  color: var(--cream);
+  font-weight: 750;
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 0.2rem;
+}
+
 .event-details {
   display: grid;
   align-content: center;
@@ -564,6 +581,8 @@ h3 {
 }
 
 .event-detail dd {
+  display: grid;
+  gap: 0.15rem;
   margin: 0;
   color: rgba(246, 240, 230, 0.72);
 }
@@ -608,8 +627,7 @@ h3 {
   font-size: 1.04rem;
 }
 
-.draft-pill,
-.prototype-label {
+.draft-pill {
   display: inline-flex;
   align-items: center;
   border: 1px solid rgba(141, 85, 46, 0.35);
@@ -771,6 +789,7 @@ h3 {
 }
 
 .booking-section {
+  scroll-margin-top: 8.5rem;
   background:
     radial-gradient(circle at 5% 90%, rgba(135, 148, 123, 0.18), transparent 24rem),
     var(--cream);
@@ -828,18 +847,6 @@ h3 {
   padding: clamp(1.2rem, 4vw, 2rem);
 }
 
-.prototype-label {
-  margin-bottom: 1.5rem;
-}
-
-.prototype-label span {
-  width: 0.5rem;
-  height: 0.5rem;
-  margin-right: 0.45rem;
-  border-radius: 50%;
-  background: var(--caramel);
-}
-
 .booking-form fieldset {
   margin: 0;
   border: 0;
@@ -857,11 +864,21 @@ h3 {
 }
 
 .booking-form label > span {
-  display: block;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
   margin-bottom: 0.35rem;
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.04em;
+}
+
+.booking-form label small {
+  color: var(--espresso-soft);
+  font-size: 0.62rem;
+  font-weight: 650;
+  letter-spacing: 0.02em;
 }
 
 .booking-form input,
@@ -909,12 +926,39 @@ h3 {
   opacity: 0.68;
 }
 
-.booking-form > p {
-  margin: 0.8rem 0 0;
-  color: var(--caramel-dark);
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-align: center;
+.form-status {
+  min-height: 0;
+  margin-top: 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 650;
+}
+
+.form-status p {
+  margin: 0;
+}
+
+.form-status-success,
+.form-status-error {
+  border: 1px solid currentColor;
+  padding: 0.85rem 1rem;
+}
+
+.form-status-success {
+  background: rgba(135, 148, 123, 0.14);
+  color: var(--sage-dark);
+}
+
+.form-status-error {
+  background: rgba(185, 120, 69, 0.12);
+  color: #723b26;
+}
+
+.form-status-error a {
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 0.2rem;
 }
 
 .page-hero {
@@ -1462,17 +1506,13 @@ h3 {
   gap: 0.85rem;
 }
 
-.footer-grid p {
-  margin-bottom: 0;
+.footer-lockup {
+  width: min(100%, 11.5rem);
+  height: auto;
 }
 
-.footer-motto {
-  max-width: 18rem;
-  color: var(--cream);
-  font-family: var(--font-serif);
-  font-size: clamp(1.5rem, 6vw, 2.15rem);
-  font-style: italic;
-  line-height: 1.05;
+.footer-grid p {
+  margin-bottom: 0;
 }
 
 .footer-contact {
@@ -1720,11 +1760,6 @@ h3 {
 }
 
 @media (max-width: 41.99rem) {
-  .wordmark > span:last-child {
-    max-width: 6.5rem;
-    line-height: 1;
-  }
-
   .hero-marquee .marquee-item:nth-child(n + 4) {
     display: none;
   }

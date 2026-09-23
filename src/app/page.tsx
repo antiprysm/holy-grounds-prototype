@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { EventInquiryForm } from "@/components/EventInquiryForm";
 import { ArrowIcon, InstagramIcon } from "@/components/SiteChrome";
 import { publicAsset, siteContent } from "@/data/siteContent";
 
@@ -15,7 +16,7 @@ export default function Home() {
           <div className="hero-copy">
             <div className="hero-seal" aria-hidden="true">
               <Image
-                src={publicAsset(siteContent.brand.logoBrown)}
+                src={publicAsset(siteContent.brand.badgeBrown)}
                 alt=""
                 width={88}
                 height={85}
@@ -25,7 +26,6 @@ export default function Home() {
             <p className="eyebrow">{content.hero.eyebrow}</p>
             <h1>{content.hero.title}</h1>
             <div className="tagline-wrap">
-              <span>{content.hero.taglineLabel}</span>
               <p>“{content.hero.tagline}”</p>
             </div>
             <p className="hero-intro">{content.hero.intro}</p>
@@ -69,13 +69,39 @@ export default function Home() {
             <h2>{content.announcement.title}</h2>
             <p className="announcement-date">{content.announcement.dateLine}</p>
             <p className="announcement-description">{content.announcement.description}</p>
+            <div className="announcement-actions">
+              <a
+                className="button announcement-directions"
+                href={content.announcement.directions.href}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                {content.announcement.directions.label}
+                <ArrowIcon />
+              </a>
+              <p className="visitor-note">
+                {content.announcement.visitorNote.beforeLink}{" "}
+                <a
+                  href={content.announcement.visitorNote.href}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  {content.announcement.visitorNote.linkLabel}
+                </a>{" "}
+                {content.announcement.visitorNote.afterLink}
+              </p>
+            </div>
           </div>
           <dl className="event-details">
             {content.announcement.details.map((detail, index) => (
               <div className="event-detail" key={detail.label}>
                 <span aria-hidden="true">0{index + 1}</span>
                 <dt>{detail.label}</dt>
-                <dd>{detail.value}</dd>
+                <dd>
+                  {detail.lines.map((line) => (
+                    <span key={line}>{line}</span>
+                  ))}
+                </dd>
               </div>
             ))}
           </dl>
@@ -125,7 +151,7 @@ export default function Home() {
           </div>
           <Image
             className="phrase-artwork"
-            src={publicAsset(siteContent.brand.phraseArtwork)}
+            src={publicAsset(siteContent.brand.mottoArtworkLight)}
             alt="Where miracles are brewing"
             width={1280}
             height={777}
@@ -158,7 +184,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="booking-section" id="book">
+      <section className="booking-section" id={content.booking.id}>
         <div className="page-container booking-grid">
           <div className="booking-copy">
             <p className="eyebrow">{content.booking.eyebrow}</p>
@@ -179,29 +205,7 @@ export default function Home() {
             </div>
           </div>
 
-          <form className="booking-form" aria-describedby="prototype-form-note">
-            <div className="prototype-label">
-              <span aria-hidden="true" />
-              {content.booking.prototypeLabel}
-            </div>
-            <fieldset disabled>
-              <legend className="sr-only">Event inquiry preview</legend>
-              <div className="form-grid">
-                {content.booking.fields.map((field) => (
-                  <label key={field.label}>
-                    <span>{field.label}</span>
-                    <input type="text" placeholder={field.placeholder} />
-                  </label>
-                ))}
-              </div>
-              <label>
-                <span>{content.booking.messageLabel}</span>
-                <textarea placeholder={content.booking.messagePlaceholder} rows={4} />
-              </label>
-              <button type="button">{content.booking.buttonLabel}</button>
-            </fieldset>
-            <p id="prototype-form-note">{content.booking.disclaimer}</p>
-          </form>
+          <EventInquiryForm />
         </div>
       </section>
     </main>

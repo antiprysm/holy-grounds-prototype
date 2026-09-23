@@ -21,7 +21,7 @@ export default function MenuPage() {
           </div>
           <Image
             className="menu-logo"
-            src={publicAsset(siteContent.brand.logoBrown)}
+            src={publicAsset(siteContent.brand.badgeBrown)}
             alt="Holy Grounds monogram"
             width={230}
             height={222}
