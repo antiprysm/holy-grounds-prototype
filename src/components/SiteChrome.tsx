@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { publicAsset, siteContent } from "@/data/siteContent";
+import { publicAsset, siteContent, siteHref } from "@/data/siteContent";
 
 export function ArrowIcon() {
   return (
@@ -46,15 +46,24 @@ export function SiteHeader() {
             />
           </Link>
           <nav className="primary-nav" aria-label="Primary navigation">
-            {siteContent.navigation.map((item) => (
-              <Link key={item.href} href={item.href}>
-                {item.label}
-              </Link>
-            ))}
+            {siteContent.navigation.map((item) =>
+              item.href.includes("#") ? (
+                <a key={item.href} href={siteHref(item.href)}>
+                  {item.label}
+                </a>
+              ) : (
+                <Link key={item.href} href={item.href}>
+                  {item.label}
+                </Link>
+              ),
+            )}
           </nav>
-          <Link className="nav-cta" href={siteContent.utilityLabels.navigationCtaHref}>
+          <a
+            className="nav-cta"
+            href={siteHref(siteContent.utilityLabels.navigationCtaHref)}
+          >
             {siteContent.utilityLabels.navigationCta}
-          </Link>
+          </a>
         </div>
       </header>
     </>
@@ -84,6 +93,10 @@ export function SiteFooter() {
           {siteContent.footer.links.map((item) => (
             item.href.startsWith("http") ? (
               <a key={item.href} href={item.href} target="_blank" rel="noreferrer noopener">
+                {item.label}
+              </a>
+            ) : item.href.includes("#") ? (
+              <a key={item.href} href={siteHref(item.href)}>
                 {item.label}
               </a>
             ) : (

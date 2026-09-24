@@ -16,6 +16,25 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Deployment path
+
+The static export uses `NEXT_PUBLIC_BASE_PATH` as its single deployment-path setting.
+The custom domain is served from the root, so its build leaves the variable empty:
+
+```bash
+npm run build
+```
+
+For a repository-subpath preview, set the path for both development and builds:
+
+```bash
+NEXT_PUBLIC_BASE_PATH=/holy-grounds-prototype npm run dev
+NEXT_PUBLIC_BASE_PATH=/holy-grounds-prototype npm run build
+```
+
+Next.js inlines `basePath` into the client bundles at build time. Changing the
+deployment path therefore requires rebuilding the site before publishing it.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.

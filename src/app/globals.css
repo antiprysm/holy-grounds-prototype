@@ -789,7 +789,6 @@ h3 {
 }
 
 .booking-section {
-  scroll-margin-top: 8.5rem;
   background:
     radial-gradient(circle at 5% 90%, rgba(135, 148, 123, 0.18), transparent 24rem),
     var(--cream);
@@ -1052,7 +1051,6 @@ h3 {
   position: relative;
   display: grid;
   overflow: hidden;
-  scroll-margin-top: 8rem;
   gap: clamp(2rem, 5vw, 4rem);
   border: 1px solid rgba(135, 148, 123, 0.35);
   border-radius: 1.5rem;

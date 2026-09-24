@@ -1,8 +1,38 @@
-export const basePath = "/holy-grounds-prototype";
+function normalizeBasePath(value: string | undefined) {
+  const trimmed = (value ?? "").trim();
+
+  if (!trimmed || trimmed === "/") {
+    return "";
+  }
+
+  return `/${trimmed.replace(/^\/+|\/+$/g, "")}`;
+}
+
+export const basePath = normalizeBasePath(process.env.NEXT_PUBLIC_BASE_PATH);
+
+export function withBasePath(path: string) {
+  if (!basePath || !path.startsWith("/")) {
+    return path;
+  }
+
+  if (
+    path === basePath ||
+    path.startsWith(`${basePath}/`) ||
+    path.startsWith(`${basePath}#`) ||
+    path.startsWith(`${basePath}?`)
+  ) {
+    return path;
+  }
+
+  return `${basePath}${path}`;
+}
 
 export function publicAsset(path: string) {
-  return `${basePath}${path.startsWith("/") ? path : `/${path}`}`;
+  const absolutePath = path.startsWith("/") ? path : `/${path}`;
+  return withBasePath(absolutePath);
 }
+
+export const siteHref = withBasePath;
 
 export const siteContent = {
   meta: {
