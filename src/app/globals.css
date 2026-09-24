@@ -30,7 +30,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 8.5rem;
+  scroll-padding-top: 7rem;
 }
 
 body {
@@ -138,31 +138,6 @@ h3 {
   border-bottom: 1px solid var(--line);
   background: rgba(246, 240, 230, 0.95);
   backdrop-filter: blur(14px);
-}
-
-.preview-bar {
-  display: flex;
-  min-height: 1.75rem;
-  align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
-  background: var(--espresso);
-  color: var(--cream);
-  padding-inline: 1rem;
-  font-size: 0.62rem;
-  font-weight: 800;
-  letter-spacing: 0.13em;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.preview-dot {
-  width: 0.42rem;
-  height: 0.42rem;
-  flex: 0 0 auto;
-  border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 0 0 4px rgba(210, 166, 83, 0.18);
 }
 
 .nav-shell {
@@ -1592,6 +1567,10 @@ h3 {
 }
 
 @media (min-width: 42rem) {
+  html {
+    scroll-padding-top: 5.5rem;
+  }
+
   .page-container,
   .nav-shell {
     width: min(100% - 3.5rem, 75rem);

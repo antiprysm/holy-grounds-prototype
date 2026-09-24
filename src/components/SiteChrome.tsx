@@ -31,10 +31,6 @@ export function SiteHeader() {
         {siteContent.utilityLabels.skipLink}
       </a>
       <header className="site-header">
-        <div className="preview-bar">
-          <span className="preview-dot" aria-hidden="true" />
-          {siteContent.brand.conceptLabel}
-        </div>
         <div className="nav-shell">
           <Link className="wordmark" href="/" aria-label={`${siteContent.brand.name}, home`}>
             <Image

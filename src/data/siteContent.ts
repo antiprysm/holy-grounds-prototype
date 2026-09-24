@@ -43,7 +43,6 @@ export const siteContent = {
   brand: {
     shortName: "Holy Grounds",
     name: "Holy Grounds Coffee Truck",
-    conceptLabel: "Private meeting preview · not published",
     headerLockup: "/brand/holy-grounds-lockup-black.svg",
     footerLockup: "/brand/holy-grounds-lockup-light.svg",
     badgeBlack: "/brand/holy-grounds-badge-black.webp",
