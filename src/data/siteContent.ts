@@ -36,9 +36,9 @@ export const siteHref = withBasePath;
 
 export const siteContent = {
   meta: {
-    title: "Holy Grounds Coffee Truck | Private Concept Preview",
+    title: "Holy Grounds Coffee Truck",
     description:
-      "A private meeting preview for Holy Grounds Coffee Truck. Not an official published website.",
+      "A mobile coffee gathering place serving craft coffee with genuine hospitality, bringing people together through faith, hope, and meaningful connection.",
   },
   brand: {
     shortName: "Holy Grounds",

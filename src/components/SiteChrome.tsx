@@ -20,10 +20,6 @@ export function InstagramIcon() {
   );
 }
 
-export function DraftPill({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <p className="draft-pill">{children}</p>;
-}
-
 export function SiteHeader() {
   return (
     <>
