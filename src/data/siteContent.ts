@@ -350,7 +350,7 @@ export const siteContent = {
     secondaryImageCaption: "Behind the scenes.",
     pullQuote:
       "I’ve learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.",
-    quoteAttribution: "Commonly attributed to Maya Angelou",
+    quoteAttribution: " - Maya Angelou",
   },
   menu: {
     metaTitle: "Seasonal Menu | Holy Grounds Coffee Truck",
