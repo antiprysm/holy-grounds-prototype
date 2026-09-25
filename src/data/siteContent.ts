@@ -516,7 +516,6 @@ export const siteContent = {
   footer: {
     title: "Holy Grounds Coffee Truck",
     motto: "Where Miracles Are Brewing",
-    contactLabel: "Bookings & cohort invitations.",
     email: "holygroundscoffeetruck@gmail.com",
     links: [
       { label: "Our Story", href: "/our-story" },

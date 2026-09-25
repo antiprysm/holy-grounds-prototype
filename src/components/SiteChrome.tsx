@@ -81,7 +81,6 @@ export function SiteFooter() {
         </div>
 
         <div className="footer-contact">
-          <span>{siteContent.footer.contactLabel}</span>
           <a href={`mailto:${siteContent.footer.email}`}>{siteContent.footer.email}</a>
         </div>
 
