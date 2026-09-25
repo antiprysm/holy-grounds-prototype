@@ -43,8 +43,8 @@ export const siteContent = {
   brand: {
     shortName: "Holy Grounds",
     name: "Holy Grounds Coffee Truck",
-    headerLockup: "/brand/holy-grounds-lockup-black.svg",
-    footerLockup: "/brand/holy-grounds-lockup-light.svg",
+    headerLockup: "/brand/holy-grounds-lockup-black.webp",
+    footerLockup: "/brand/holy-grounds-lockup-light.webp",
     badgeBlack: "/brand/holy-grounds-badge-black.webp",
     badgeBrown: "/brand/holy-grounds-badge-brown.webp",
     wordmarkBlack: "/brand/holy-grounds-wordmark-black.svg",
@@ -108,6 +108,10 @@ export const siteContent = {
         label: "Get Directions",
         href: "https://www.google.com/maps/search/?api=1&query=Goebberts+Farm+40+W+Higgins+Rd+South+Barrington+IL+60010",
       },
+      ticketPrices: {
+        label: "View Ticket Prices",
+        href: "https://goebbertspumpkinfarm.com/fall-festival/ticket-prices/",
+      },
       visitorNote: {
         beforeLink: "Goebbert’s hosts ticketed attractions. Please check",
         linkLabel: "the farm’s website",
@@ -127,8 +131,6 @@ export const siteContent = {
     mission: {
       eyebrow: "Why Holy Grounds",
       title: "A cup can be a starting place",
-      intro:
-        "Four possible pillars for the conversation. Each is framed as a direction to explore, not a finalized commitment.",
       cards: [
         {
           number: "01",
@@ -505,8 +507,6 @@ export const siteContent = {
         },
       ],
     },
-    disclaimer:
-      "No public street address, fixed daily hours, or phone number has been confirmed for this preview.",
   },
   social: {
     label: "Follow the journey on Instagram",

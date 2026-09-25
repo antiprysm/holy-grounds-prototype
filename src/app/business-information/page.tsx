@@ -84,8 +84,6 @@ export default function BusinessInformationPage() {
               </article>
             ))}
           </div>
-
-          <p className="business-disclaimer">{content.disclaimer}</p>
         </div>
       </section>
     </main>

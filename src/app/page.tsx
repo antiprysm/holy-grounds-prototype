@@ -70,15 +70,22 @@ export default function Home() {
             <p className="announcement-date">{content.announcement.dateLine}</p>
             <p className="announcement-description">{content.announcement.description}</p>
             <div className="announcement-actions">
-              <a
-                className="button announcement-directions"
-                href={content.announcement.directions.href}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                {content.announcement.directions.label}
-                <ArrowIcon />
-              </a>
+              <div className="announcement-buttons">
+                {[content.announcement.directions, content.announcement.ticketPrices].map(
+                  (action) => (
+                    <a
+                      className="button announcement-directions"
+                      href={action.href}
+                      key={action.href}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      {action.label}
+                      <ArrowIcon />
+                    </a>
+                  ),
+                )}
+              </div>
               <p className="visitor-note">
                 {content.announcement.visitorNote.beforeLink}{" "}
                 <a
@@ -137,7 +144,6 @@ export default function Home() {
               <p className="eyebrow eyebrow-light">{content.mission.eyebrow}</p>
               <h2>{content.mission.title}</h2>
             </div>
-            <p>{content.mission.intro}</p>
           </div>
           <div className="mission-grid">
             {content.mission.cards.map((card) => (
