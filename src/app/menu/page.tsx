@@ -2,6 +2,14 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { publicAsset, siteContent } from "@/data/siteContent";
 
+function getMenuPrice(item: object) {
+  if ("price" in item && typeof item.price === "string" && item.price.trim()) {
+    return item.price;
+  }
+
+  return null;
+}
+
 export const metadata: Metadata = {
   title: siteContent.menu.metaTitle,
   description: `${siteContent.menu.title}. ${siteContent.menu.availabilityNote}`,
@@ -18,6 +26,7 @@ export default function MenuPage() {
             <p className="eyebrow">{content.eyebrow}</p>
             <h1>{content.title}</h1>
             <p className="page-intro">{content.intro}</p>
+            <p className="page-intro">{content.craftNote}</p>
           </div>
           <Image
             className="menu-logo"
@@ -35,6 +44,27 @@ export default function MenuPage() {
       </section>
 
       <section className="menu-board-section">
+        <div className="page-container menu-drink-gallery">
+          {content.drinkPhotos.map((photo) => (
+            <div className="menu-drink-photo" key={photo.src}>
+              <picture>
+                <source
+                  media="(max-width: 41.99rem)"
+                  srcSet={publicAsset(photo.mobileSrc)}
+                />
+                <Image
+                  src={publicAsset(photo.src)}
+                  alt={photo.alt}
+                  width={photo.width}
+                  height={photo.height}
+                  loading="eager"
+                  style={{ objectPosition: photo.objectPosition }}
+                />
+              </picture>
+            </div>
+          ))}
+        </div>
+
         <div className="page-container menu-board">
           {content.groups.map((group) => (
             <section
@@ -43,19 +73,27 @@ export default function MenuPage() {
             >
               <h2>{group.title}</h2>
               <ul>
-                {group.items.map((item) => (
-                  <li key={item.name}>
-                    <div className="menu-item-line">
-                      <strong>{item.name}</strong>
-                      <span aria-hidden="true" />
-                      {item.price && <b>{item.price}</b>}
-                    </div>
-                    {"options" in item && item.options && (
-                      <p className="menu-item-options">{item.options}</p>
-                    )}
-                    {"note" in item && item.note && <p>{item.note}</p>}
-                  </li>
-                ))}
+                {group.items.map((item) => {
+                  const price = getMenuPrice(item);
+
+                  return (
+                    <li key={item.name}>
+                      <div className="menu-item-line">
+                        <strong>{item.name}</strong>
+                        {price ? (
+                          <>
+                            <span aria-hidden="true" />
+                            <b>{price}</b>
+                          </>
+                        ) : null}
+                      </div>
+                      {"options" in item && item.options && (
+                        <p className="menu-item-options">{item.options}</p>
+                      )}
+                      {"note" in item && item.note && <p>{item.note}</p>}
+                    </li>
+                  );
+                })}
               </ul>
             </section>
           ))}

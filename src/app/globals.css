@@ -1020,6 +1020,7 @@ h3 {
     linear-gradient(135deg, rgba(135, 148, 123, 0.16), rgba(210, 166, 83, 0.1)),
     var(--paper);
   padding: clamp(1.5rem, 5vw, 3.5rem);
+  scroll-margin-top: 7rem;
 }
 
 .leadership-cohort::after {
@@ -1036,11 +1037,28 @@ h3 {
 .leadership-cohort > * {
   position: relative;
   z-index: 1;
+  min-width: 0;
 }
 
-.leadership-cohort h2 {
+.leadership-cohort h2,
+.growing-leaders-title {
   max-width: 14ch;
   font-size: clamp(2.35rem, 7vw, 4.35rem);
+}
+
+.growing-leaders-page-section {
+  padding-block: clamp(3.5rem, 9vw, 7rem);
+}
+
+.growing-leaders-cohort {
+  min-height: min(46rem, calc(100vh - 10rem));
+  align-content: center;
+}
+
+.leadership-cohort-copy .eyebrow {
+  max-width: none;
+  margin-bottom: 1rem;
+  color: var(--caramel-dark);
 }
 
 .leadership-cohort-copy p {
@@ -1099,6 +1117,7 @@ h3 {
 .cohort-interest a {
   color: var(--espresso);
   font-weight: 800;
+  overflow-wrap: anywhere;
   text-decoration: underline;
   text-decoration-color: var(--gold);
   text-underline-offset: 0.2rem;
@@ -1212,6 +1231,34 @@ h3 {
   background:
     linear-gradient(rgba(255, 250, 242, 0.9), rgba(255, 250, 242, 0.9)),
     repeating-linear-gradient(-45deg, transparent 0 18px, rgba(46, 33, 27, 0.04) 18px 19px);
+}
+
+.menu-drink-gallery {
+  display: grid;
+  gap: 1rem;
+  padding-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+.menu-drink-photo {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 1.2rem;
+  background: var(--cream-deep);
+  box-shadow: 0 15px 38px rgba(70, 47, 34, 0.08);
+}
+
+.menu-drink-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-drink-photo picture {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .menu-board {
@@ -1590,6 +1637,10 @@ h3 {
   }
 
   .menu-board {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .menu-drink-gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 

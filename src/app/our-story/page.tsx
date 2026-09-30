@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ArrowIcon } from "@/components/SiteChrome";
+import { LegacyLeadershipCohortRedirect } from "@/components/LegacyLeadershipCohortRedirect";
 import { publicAsset, siteContent } from "@/data/siteContent";
 
 export const metadata: Metadata = {
@@ -10,7 +10,6 @@ export const metadata: Metadata = {
 
 export default function OurStoryPage() {
   const content = siteContent.story;
-  const cohort = content.leadershipCohort;
 
   return (
     <main id="main-content">
@@ -52,45 +51,7 @@ export default function OurStoryPage() {
             ))}
           </div>
 
-          <section
-            className="leadership-cohort"
-            id={cohort.id}
-            aria-labelledby="leadership-cohort-title"
-          >
-            <div className="leadership-cohort-copy">
-              <h2 id="leadership-cohort-title">{cohort.title}</h2>
-              {cohort.paragraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </div>
-
-            <div className="leadership-cohort-details">
-              <dl className="cohort-schedule">
-                {cohort.schedule.map((detail) => (
-                  <div key={detail.label}>
-                    <dt>{detail.label}:</dt>
-                    <dd>{detail.value}</dd>
-                  </div>
-                ))}
-              </dl>
-
-              <p className="cohort-interest">
-                {cohort.invitation.prompt}{" "}
-                <a href={`mailto:${cohort.invitation.email}`}>
-                  {cohort.invitation.email}
-                </a>{" "}
-                {cohort.invitation.suffix}
-              </p>
-
-              <div className="cohort-action">
-                <a className="button button-primary" href={cohort.action.href}>
-                  {cohort.action.label}
-                  <ArrowIcon />
-                </a>
-                <p>{cohort.followUp}</p>
-              </div>
-            </div>
-          </section>
+          <LegacyLeadershipCohortRedirect />
 
           <aside className="story-aside">
             <figure className="story-secondary-photo">
