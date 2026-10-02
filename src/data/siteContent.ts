@@ -195,6 +195,18 @@ export const siteContent = {
           caption: "Hospitality in action",
           layout: "standard",
         },
+        {
+          src: "/images/holy-grounds-truck-winter.webp",
+          alt: "Holy Grounds Coffee Truck parked beside snow on a sunny winter day",
+          caption: "A winter view",
+          layout: "wide",
+        },
+        {
+          src: "/images/holy-grounds-team-portrait.webp",
+          alt: "Two Holy Grounds team members in matching logo shirts standing together in front of the truck",
+          caption: "Together at the truck",
+          layout: "tall",
+        },
       ],
     },
     booking: {
@@ -469,9 +481,9 @@ export const siteContent = {
     imageAlt: "The working interior of the Holy Grounds Coffee Truck",
     details: [
       {
-        label: "Working business name",
-        value: "Holy Grounds Coffee Co., LLC",
-        note: "Public-facing name: Holy Grounds Coffee Truck. Legal styling remains subject to confirmation.",
+        label: "Legal business name",
+        value: "Holy Grounds Coffee Truck, Corp.",
+        note: "Public-facing name: Holy Grounds Coffee Truck.",
       },
       {
         label: "Service model",
