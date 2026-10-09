@@ -44,7 +44,8 @@ export default function Home() {
             <Image
               src={publicAsset(content.hero.image)}
               alt={content.hero.imageAlt}
-              fill
+              width={2400}
+              height={1800}
               sizes="(min-width: 58rem) 42vw, 100vw"
               priority
             />

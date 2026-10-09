@@ -392,7 +392,6 @@ h3 {
 
 .hero-photo {
   position: relative;
-  aspect-ratio: 4 / 5;
   width: min(100%, 31rem);
   overflow: hidden;
   justify-self: center;
@@ -411,8 +410,10 @@ h3 {
 }
 
 .hero-photo img {
-  object-fit: cover;
-  object-position: center 58%;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
 }
 
 .hero-photo figcaption {
@@ -1110,6 +1111,49 @@ h3 {
   font-weight: 700;
 }
 
+.cohort-resources {
+  margin-bottom: 1.4rem;
+}
+
+.cohort-resources h2 {
+  max-width: none;
+  margin-bottom: 0.65rem;
+  color: var(--caramel-dark);
+  font-family: var(--font-sans), Arial, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.cohort-resources ul {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cohort-resources a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--espresso);
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 0.2rem;
+}
+
+.cohort-resources svg {
+  width: 0.95rem;
+  height: 0.95rem;
+  flex: 0 0 auto;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
 .cohort-interest {
   color: var(--espresso-soft);
 }
@@ -1401,6 +1445,34 @@ h3 {
 .business-detail > span {
   color: var(--espresso-soft);
   font-size: 0.83rem;
+}
+
+.business-detail-links {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+}
+
+.business-detail-resource-link {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--espresso);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1.35;
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 0.2rem;
+}
+
+.business-detail-resource-link svg {
+  width: 0.95rem;
+  height: 0.95rem;
+  flex: 0 0 auto;
+  stroke: currentColor;
+  stroke-width: 1.8;
 }
 
 .business-operations-section {

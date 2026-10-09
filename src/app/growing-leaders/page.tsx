@@ -39,6 +39,25 @@ export default function GrowingLeadersPage() {
                 ))}
               </dl>
 
+              <nav className="cohort-resources" aria-labelledby="leadership-resources-title">
+                <h2 id="leadership-resources-title">{content.resources.title}</h2>
+                <ul>
+                  {content.resources.links.map((resource) => (
+                    <li key={resource.href}>
+                      <a
+                        href={resource.href}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        {resource.label}
+                        <span className="sr-only"> (opens in a new tab)</span>
+                        <ArrowIcon />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+
               <p className="cohort-interest">
                 {content.invitation.prompt}{" "}
                 <a href={`mailto:${content.invitation.email}`}>

@@ -34,6 +34,17 @@ export function publicAsset(path: string) {
 
 export const siteHref = withBasePath;
 
+const leadershipOrganizations = [
+  {
+    label: "Global Leadership Network",
+    href: "https://my.globalleadership.org/",
+  },
+  {
+    label: "Women Leaders Alliance",
+    href: "https://www.womenleadersalliance.net/",
+  },
+] as const;
+
 export const siteContent = {
   meta: {
     title: "Holy Grounds Coffee Truck",
@@ -75,9 +86,9 @@ export const siteContent = {
         "A mobile coffee gathering place serving craft coffee with genuine hospitality, bringing people together through faith, hope, and meaningful connection.",
       primaryAction: { label: "View the Seasonal Menu", href: "/menu" },
       secondaryAction: { label: "Read Our Story", href: "/our-story" },
-      image: "/images/holy-grounds-truck-hero.webp",
+      image: "/images/holy-grounds-homepage-hero.webp",
       imageAlt:
-        "The brown and cream Holy Grounds Coffee Truck parked outside on a clear day",
+        "The brown and cream Holy Grounds Coffee Truck parked outdoors at sunset",
       imageCaption: "The Holy Grounds Coffee Truck",
       marquee: ["Faith", "Hope", "Love", "Coffee", "Community"],
     },
@@ -290,7 +301,7 @@ export const siteContent = {
       successMessage:
         "Thank you! Your event inquiry has been sent. We’ll be in touch to discuss the details. Your booking is not confirmed until you hear from us.",
       errorMessage: "We couldn’t send your inquiry. Please try again or email",
-      fallbackEmail: "holygroundscoffeetruck@gmail.com",
+      fallbackEmail: "hello@holygroundscoffeetruck.com",
     },
   },
   story: {
@@ -348,22 +359,22 @@ export const siteContent = {
       "Krista and Andrea are continuing that vision with monthly online gatherings featuring leadership talks and discussion. Come ready to listen, share, and connect. No preparation required.",
     ],
     schedule: [
-      { label: "First gathering", value: "Thursday, October 1, 2026" },
+      { label: "Schedule", value: "First Thursday of each month." },
       { label: "Time", value: "7:00–8:30 PM Central" },
-      {
-        label: "Ongoing",
-        value: "First Thursday of each month, online through Google Meet",
-      },
-      { label: "October topic", value: "Technology in modern life" },
+      { label: "Location", value: "Online through Google Meet" },
     ],
+    resources: {
+      title: "Leadership resources",
+      links: leadershipOrganizations,
+    },
     invitation: {
       prompt: "Interested, even if you’re unsure you can attend? Email",
-      email: "holygroundscoffeetruck@gmail.com",
+      email: "hello@holygroundscoffeetruck.com",
       suffix: "to receive a meeting invitation.",
     },
     action: {
       label: "Request a meeting invitation",
-      href: "mailto:holygroundscoffeetruck@gmail.com?subject=Leadership%20Cohort%20Meeting%20Invitation",
+      href: "mailto:hello@holygroundscoffeetruck.com?subject=Leadership%20Cohort%20Meeting%20Invitation",
     },
     followUp: "Krista or Andrea will email you the Google Meet invitation.",
   },
@@ -497,15 +508,21 @@ export const siteContent = {
       },
       {
         label: "Public contact details",
-        value: "holygroundscoffeetruck@gmail.com",
+        value: "hello@holygroundscoffeetruck.com",
         note: "Bookings, event questions, and Leadership Cohort invitations.",
-        href: "mailto:holygroundscoffeetruck@gmail.com",
+        href: "mailto:hello@holygroundscoffeetruck.com",
       },
       {
         label: "Public social channel",
         value: "@holygrounds.coffeetruck",
         note: "Verified Holy Grounds Coffee Truck Instagram account.",
         href: "https://www.instagram.com/holygrounds.coffeetruck/",
+      },
+      {
+        label: "Leadership group",
+        value: "Holy Grounds Women’s Global Leadership Cohort",
+        note: "Resources related to the cohort’s leadership conversations.",
+        links: leadershipOrganizations,
       },
     ],
     operations: {
@@ -529,7 +546,7 @@ export const siteContent = {
             "When emailing, include your name or organization, desired date, event location, and a few details about the gathering.",
           action: {
             label: "Email about an event",
-            href: "mailto:holygroundscoffeetruck@gmail.com?subject=Event%20Inquiry",
+            href: "mailto:hello@holygroundscoffeetruck.com?subject=Event%20Inquiry",
           },
         },
         {
@@ -537,7 +554,7 @@ export const siteContent = {
           description: "We can provide the business license upon request.",
           action: {
             label: "Request the license",
-            href: "mailto:holygroundscoffeetruck@gmail.com?subject=Business%20License%20Request",
+            href: "mailto:hello@holygroundscoffeetruck.com?subject=Business%20License%20Request",
           },
         },
       ],
@@ -551,7 +568,7 @@ export const siteContent = {
   footer: {
     title: "Holy Grounds Coffee Truck",
     motto: "Where Miracles Are Brewing",
-    email: "holygroundscoffeetruck@gmail.com",
+    email: "hello@holygroundscoffeetruck.com",
     links: [
       { label: "Our Story", href: "/our-story" },
       { label: "Menu", href: "/menu" },

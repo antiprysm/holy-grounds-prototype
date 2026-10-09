@@ -37,7 +37,9 @@ export default function BusinessInformationPage() {
         <div className="page-container business-details-grid">
           {content.details.map((detail) => (
             <article
-              className={`business-detail${"href" in detail ? " business-linked-detail" : ""}`}
+              className={`business-detail${
+                "href" in detail || "links" in detail ? " business-linked-detail" : ""
+              }`}
               key={detail.label}
             >
               <p>{detail.label}</p>
@@ -53,6 +55,26 @@ export default function BusinessInformationPage() {
                 )}
               </h2>
               <span>{detail.note}</span>
+              {"links" in detail ? (
+                <nav
+                  className="business-detail-links"
+                  aria-label="Leadership organization resources"
+                >
+                  {detail.links.map((resource) => (
+                    <a
+                      className="business-detail-resource-link"
+                      href={resource.href}
+                      key={resource.href}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      {resource.label}
+                      <span className="sr-only"> (opens in a new tab)</span>
+                      <ArrowIcon />
+                    </a>
+                  ))}
+                </nav>
+              ) : null}
             </article>
           ))}
         </div>
