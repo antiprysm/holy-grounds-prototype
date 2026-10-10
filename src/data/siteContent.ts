@@ -37,7 +37,7 @@ export const siteHref = withBasePath;
 const leadershipOrganizations = [
   {
     label: "Global Leadership Network",
-    href: "https://my.globalleadership.org/",
+    href: "https://www.globalleadership.org/summit",
   },
   {
     label: "Women Leaders Alliance",
